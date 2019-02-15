@@ -1,0 +1,4 @@
+services:
+  ai:
+    class: App\Command\AISayCommand
+    tags: ['console.command']
