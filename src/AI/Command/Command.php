@@ -49,6 +49,8 @@ abstract class Command implements ICommand
         } catch (\Exception $exception) {
             $this->setState(static::STATE_FAILED);
         }
+
+        return null;
     }
 
     /**

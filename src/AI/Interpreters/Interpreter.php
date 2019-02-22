@@ -2,7 +2,7 @@
 
 namespace App\AI\Interpreters;
 
-abstract class Interpreter
+abstract class Interpreter implements IInterpreter
 {
 
 }

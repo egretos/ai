@@ -10,6 +10,11 @@ interface IInterpreter
     public function regex();
 
     /**
+     * @return string[]
+     */
+    public function rules();
+
+    /**
      * @param string $expression
      * @return mixed
      */
