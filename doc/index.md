@@ -2,9 +2,10 @@
 
 #### Logic Entities:
 
-- Command - can run **one** action. Hard coded
+- [Command](logic_entities/command.md) - can run **one** action. **Hard coded**
+- Interpreter - can interpret text into processes or commands
 - Process - cat call any commands. Calls are successive.
-- Event - Creates when some process done. optional.
+- Event - Creates when some process done or failed, or something important happens. can call another process
 - Listener - Listen events and messages. Can run any process.
 - Strategy - Has scripts for executing for any predicted situations (like event).
 - Memento - Can store edge states and save it as **Snapshots**
