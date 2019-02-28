@@ -11,7 +11,7 @@ class CommandInterpreter extends Interpreter
 
     public function rules()
     {
-        return ['{:command}{ parameter}'];
+        return [':{command} {parameter}'];
     }
 
     public function interpret(string $expression)

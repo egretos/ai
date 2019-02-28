@@ -2,7 +2,7 @@
 
 namespace App\AI\Command;
 
-class Write extends Command
+class Output extends Command
 {
     private $message = '';
 

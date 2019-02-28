@@ -1,5 +1,16 @@
 # EAI documentation
 
+EAI - it is distributed system, which designed as a middleware between man and machine.
+EAI can understand man language and interpret it into machine code.
+
+### System architecture
+
+EAI has modules called Frames. Every single frame has responsibilities defined by 
+its creator and its purpose.
+EAI has endpoints. Endpoint - it is client which uses opportunities of EAI. 
+Endpoint can to be a website, Android app, devise based on Arduino or any other hardware or software.
+Endpoint must to transmit data from man to EAI core frame, and nothing else.
+
 #### Logic Entities:
 
 - [Command](logic_entities/command.md) - can run **one** action. Hard coded.
@@ -7,7 +18,7 @@
 - Process - Can call any commands. Calls are successive.
 - Event - Creates when some process done or failed, or something important happens. Can call another process
 - Listener - Listen events and messages. Can run any process.
-- Strategy - Has scripts for executing for any predicted situations (like event).
+- Strategy - Has scripts for executing processes. Behavior can be changed by conditions.
 - Memento - Can store edge states and save it as **Snapshots**
 - Proxy - Uses as middleware with Edges and Logic Entities.
 - Composite - Can compose vertexes into graph structure.

@@ -1,8 +1,9 @@
 # Command
 
-Command - it's logic entity, what runs single simple action in EAI system. 
-Command is always hardcoded. It means each command has class in code system.
-It uses `App\AI\Command` namespace, and must to implement `ICommand` interface.
+Command - it's logic entity, what runs single simple action in EAI frame. 
+Command is always hardcoded. It means each command has eponymous class in code.
+
+Every command must to use `App\AI\Command` namespace, and implement `ICommand` interface.
 
 ## Usage
 
@@ -14,8 +15,9 @@ as possible. Duty of command is to be a middleware between EAI processes and oth
 
 Raw command call:
 
-`:write 'This message you will see in your standart output device, little human'`
+`:output 'This message you will see in your standart output device, little human'`
 
-Two standard commands for each systems - `read` and `write`.
+Four standard commands for each frames - `read` and `write`.
 'read' selects data from storage.
 'write' transmits data to  device output.
+''
