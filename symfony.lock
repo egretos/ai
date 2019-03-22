@@ -2,6 +2,39 @@
     "clue/stream-filter": {
         "version": "v1.4.0"
     },
+    "doctrine/annotations": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "cb4152ebcadbe620ea2261da1a1c5a9b8cea7672"
+        }
+    },
+    "doctrine/cache": {
+        "version": "v1.8.0"
+    },
+    "doctrine/collections": {
+        "version": "v1.5.0"
+    },
+    "doctrine/common": {
+        "version": "v2.10.0"
+    },
+    "doctrine/event-manager": {
+        "version": "v1.0.0"
+    },
+    "doctrine/inflector": {
+        "version": "v1.3.0"
+    },
+    "doctrine/lexer": {
+        "version": "v1.0.1"
+    },
+    "doctrine/persistence": {
+        "version": "v1.1.0"
+    },
+    "doctrine/reflection": {
+        "version": "v1.0.0"
+    },
     "graphaware/neo4j-bolt": {
         "version": "1.11.0"
     },
@@ -10,6 +43,9 @@
     },
     "graphaware/neo4j-php-client": {
         "version": "4.8.5"
+    },
+    "graphaware/neo4j-php-ogm": {
+        "version": "1.0.0-rc10"
     },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"

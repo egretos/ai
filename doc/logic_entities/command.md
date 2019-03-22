@@ -19,5 +19,5 @@ Raw command call:
 
 Four standard commands for each frames - `read` and `write`.
 'read' selects data from storage.
-'write' transmits data to  device output.
-''
+'write' write data to storage
+'output' transmits data to device output. 

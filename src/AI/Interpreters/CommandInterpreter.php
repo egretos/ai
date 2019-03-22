@@ -2,11 +2,28 @@
 
 namespace App\AI\Interpreters;
 
+use App\Repository\CommandRepository;
+
 class CommandInterpreter extends Interpreter
 {
+    /**
+     * @var CommandRepository
+     */
+    private $repository;
+
+    public function setMailer(CommandRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    public function __construct(CommandRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function regex()
     {
-        return ':([A-z]*)\s([A-z]*)';
+        return '/:([A-z]*)\s([A-z]*)/';
     }
 
     public function rules()
@@ -17,5 +34,7 @@ class CommandInterpreter extends Interpreter
     public function interpret(string $expression)
     {
         // TODO: Implement interpret() method.
+
+        return $this->repository->test();
     }
 }

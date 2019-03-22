@@ -26,7 +26,10 @@ abstract class Interpreter implements IInterpreter
     public function getName()
     {
         try {
-            return $this->name ?: strtolower(substr((new \ReflectionClass($this))->getShortName(), 0, -11));
+            return $this->name ?: strtolower(
+                // cut 'Interpreter' from the end of class name
+                substr((new \ReflectionClass($this))->getShortName(), 0, -11)
+            );
         } catch (\ReflectionException $exception) {
             return null;
         }
