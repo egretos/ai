@@ -2,7 +2,6 @@
 namespace App\Command;
 
 use App\AI\Command\Output;
-use App\AI\Interpreters\CommandInterpreter;
 use App\AI\Interpreters\CoreInterpreter;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -18,10 +17,15 @@ class AISayCommand extends Command
 
     protected static $defaultName = 'ai:say';
 
+    public function __construct($name = 'ai:say', CoreInterpreter $interpreter = null)
+    {
+        $this->interpreter = $interpreter;
+
+        parent::__construct($name);
+    }
+
     public function initialize(InputInterface $input, OutputInterface $output)
     {
-        $this->interpreter = new CoreInterpreter;
-
         parent::initialize($input, $output);
     }
 

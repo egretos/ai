@@ -11,11 +11,6 @@ class CommandInterpreter extends Interpreter
      */
     private $repository;
 
-    public function setMailer(CommandRepository $repository)
-    {
-        $this->repository = $repository;
-    }
-
     public function __construct(CommandRepository $repository)
     {
         $this->repository = $repository;

@@ -2,14 +2,14 @@
 
 namespace App\AI\Interpreters;
 
-use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\HttpKernel\KernelInterface;
 
 class CoreInterpreter
 {
-    private $definition;
+    private $kernel;
 
     private $coreInterpreters = [
-      CommandInterpreter::class
+        CommandInterpreter::class
     ];
 
     /**
@@ -17,9 +17,9 @@ class CoreInterpreter
      */
     private $initCoreInterpreters = [];
 
-    public function __construct()
+    public function __construct(KernelInterface $kernel)
     {
-        $this->definition = new Definition;
+        $this->kernel = $kernel;
 
         $this->init();
     }
@@ -27,9 +27,10 @@ class CoreInterpreter
     public function init()
     {
         foreach ($this->coreInterpreters as $interpreterName) {
-            $this->definition->setClass($interpreterName);
-
-            $this->initCoreInterpreters[] = $this->definition->getClass();
+            $this->kernel->getContainer()
+                ->set($interpreterName, $interpreterName);
+            $this->initCoreInterpreters[] = new $interpreterName;
+            $this->initCoreInterpreters[] = $this->kernel->getContainer()->get($interpreterName);
         }
     }
 
@@ -42,8 +43,10 @@ class CoreInterpreter
         $results = [];
 
         foreach ($this->initCoreInterpreters as $interpreter) {
+            //echo $interpreter;
+
             if (preg_match($interpreter->regex(), $subject)) {
-                $results[] = $interpreter;
+                $results[] = $interpreter->interpret($subject);
             }
         }
 
