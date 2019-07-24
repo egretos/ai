@@ -27,10 +27,11 @@ class CoreInterpreter
     public function init()
     {
         foreach ($this->coreInterpreters as $interpreterName) {
-            $this->kernel->getContainer()
+            /*$this->kernel->getContainer()
                 ->set($interpreterName, $interpreterName);
+            $this->initCoreInterpreters[] = $this->kernel->getContainer()->get($interpreterName);*/
+
             $this->initCoreInterpreters[] = new $interpreterName;
-            $this->initCoreInterpreters[] = $this->kernel->getContainer()->get($interpreterName);
         }
     }
 

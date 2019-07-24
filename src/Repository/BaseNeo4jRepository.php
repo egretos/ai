@@ -13,7 +13,7 @@ use GraphAware\Neo4j\OGM\EntityManagerInterface;
  * @property ClientInterface $client
  * @property EntityManager $entityManager
  */
-abstract class BaseNeo4jRepository
+abstract class BaseNeo4jRepository implements IRepository
 {
     protected $client;
     protected $entityManager;

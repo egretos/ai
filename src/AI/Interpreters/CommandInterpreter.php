@@ -11,7 +11,12 @@ class CommandInterpreter extends Interpreter
      */
     private $repository;
 
-    public function __construct(CommandRepository $repository)
+    /*public function __construct(CommandRepository $repository)
+    {
+        $this->repository = $repository;
+    }*/
+
+    public function setRepository(CommandRepository $repository)
     {
         $this->repository = $repository;
     }

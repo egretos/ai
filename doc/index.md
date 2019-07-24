@@ -16,7 +16,7 @@ Endpoint must to transmit data from man to EAI core frame, and nothing else.
 - [Command](logic_entities/command.md) - can run **one** action. Hard coded.
 - Interpreter - can interpret text into procedures or commands
 - Procedure - Can call any commands. Calls are successive.
-- Event - Creates when some procedure done or failed, or something important happens. Can call another process
+- Event - Creates when some procedure or command done or failed, or something important happens. Can call another process
 - Listener - Listen events and messages. Can run procedures.
 - Strategy - Has scripts for executing processes. Behavior can be changed by conditions.
 - Memento - Can store edge states and save it as **Snapshots**

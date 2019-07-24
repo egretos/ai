@@ -15,9 +15,13 @@ as possible. Duty of command is to be a middleware between EAI processes and oth
 
 Raw command call:
 
+`:<command-name> '<command-data>'`
+
+Example:
+
 `:output 'This message you will see in your standart output device, little human'`
 
-Four standard commands for each frames - `read` and `write`.
+Three standard commands for each frames - `read`, `output` and `write`.
 'read' selects data from storage.
-'write' write data to storage
+'write' write data to storage.
 'output' transmits data to device output. 
